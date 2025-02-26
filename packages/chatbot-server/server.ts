@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 // import fetch from "node-fetch"; // Node.js 18+ has fetch built-in
 
 const app = express();
@@ -11,21 +11,21 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Base function endpoint
-const FUNCTION_BASE_URL = "http://localhost:7071/api";
+const FUNCTION_BASE_URL = 'http://localhost:7071/api';
 
 // Route to get chatbot messages (Calls the /history function)
-app.get("/history", async (req, res) => {
+app.get('/history', async (req, res) => {
   try {
     const response = await fetch(`${FUNCTION_BASE_URL}/history`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
+
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    console.error("Error fetching messages:", error);
-    res.status(500).json({ error: "Failed to fetch messages" });
+    console.error('Error fetching messages:', error);
+    res.status(500).json({ error: 'Failed to fetch messages' });
   }
 });
 

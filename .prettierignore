@@ -1,0 +1,15 @@
+node_modules
+dist
+build
+tsp-output
+.DS_Store
+*.log
+*.tgz
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+pnpm-lock.yaml
+pnpm-debug.log*
+*.tsp
+tspconfig.yaml
