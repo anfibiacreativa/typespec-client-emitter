@@ -1,0 +1,22 @@
+{
+  "name": "chatbot-client",
+  "version": "0.1.0",
+  "type": "module",
+  "peerDependencies": {
+    "@typespec/compiler": "latest"
+  },
+  "devDependencies": {
+    "@typespec/compiler": "latest"
+  },
+  "exports": {
+    "./client": {
+      "import": "./tsp-output/@azure-tools/typespec-ts/dist/esm/index.js",
+      "require": "./tsp-output/@azure-tools/typespec-ts/dist/cjs/index.js"
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "@azure-tools/typespec-ts": "^0.38.2",
+    "@typespec/ts-http-runtime": "^0.1.0"
+  }
+}

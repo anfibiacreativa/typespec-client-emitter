@@ -1,0 +1,6 @@
+emit:
+  - "@azure-tools/typespec-ts"
+options:
+  "@azure-tools/typespec-ts":
+    package-name: chatbot-client
+    output-dir: ./generated-client
