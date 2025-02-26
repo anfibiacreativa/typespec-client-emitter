@@ -17,6 +17,8 @@
   "private": true,
   "dependencies": {
     "@azure-tools/typespec-ts": "^0.38.2",
+    "@typespec/http": "^0.65.0",
+    "@typespec/openapi3": "^0.65.0",
     "@typespec/ts-http-runtime": "^0.1.0"
   }
 }

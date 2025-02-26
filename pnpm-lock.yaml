@@ -45,6 +45,12 @@ importers:
       '@azure-tools/typespec-ts':
         specifier: ^0.38.2
         version: 0.38.2(rgeknrc7euemkiw2teshnczvaa)
+      '@typespec/http':
+        specifier: ^0.65.0
+        version: 0.65.0(@typespec/compiler@0.65.3)
+      '@typespec/openapi3':
+        specifier: ^0.65.0
+        version: 0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3))(@typespec/openapi@0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3)))(@typespec/versioning@0.65.0(@typespec/compiler@0.65.3))(@typespec/xml@0.65.0(@typespec/compiler@0.65.3))
       '@typespec/ts-http-runtime':
         specifier: ^0.1.0
         version: 0.1.0
@@ -94,9 +100,6 @@ importers:
 
   packages/chatbot-server:
     dependencies:
-      ChatbotClient:
-        specifier: workspace:*
-        version: link:../chatbot-client/tsp-output/@azure-tools/typespec-ts
       body-parser:
         specifier: ^1.20.3
         version: 1.20.3
@@ -127,6 +130,22 @@ importers:
         version: 5.7.3
 
 packages:
+
+  '@apidevtools/json-schema-ref-parser@11.7.2':
+    resolution: {integrity: sha512-4gY54eEGEstClvEkGnwVkTkrx0sqwemEFG5OSRRn3tD91XH0+Q8XIkYIfo7IwEWPpJZwILb9GUXeShtplRc/eA==}
+    engines: {node: '>= 16'}
+
+  '@apidevtools/openapi-schemas@2.1.0':
+    resolution: {integrity: sha512-Zc1AlqrJlX3SlpupFGpiLi2EbteyP7fXmUOGup6/DnkRgjP9bgMM/ag+n91rsv0U1Gpz0H3VILA/o3bW7Ua6BQ==}
+    engines: {node: '>=10'}
+
+  '@apidevtools/swagger-methods@3.0.2':
+    resolution: {integrity: sha512-QAkD5kK2b1WfjDS/UQn/qQkbwF31uqRjPTrsCs5ZG9BQGAkjwvqGFjjPqAuzac/IYzpPtRzjCP1WrTuAIjMrXg==}
+
+  '@apidevtools/swagger-parser@10.1.1':
+    resolution: {integrity: sha512-u/kozRnsPO/x8QtKYJOqoGtC4kH6yg1lfYkB9Au0WhYB0FNLpyFusttQtvhlwjtG3rOwiRz4D8DnnXa8iEpIKA==}
+    peerDependencies:
+      openapi-types: '>=7'
 
   '@azure-tools/rlc-common@0.38.2':
     resolution: {integrity: sha512-i2l5LOwh1aBqdu3dVUX1xcvtG98ecwEHOP3YOSj8P5d5qJTqzCAHIsnadSDLrPCprLNL7q1T3tqAKQ4juMP8sA==}
@@ -255,6 +274,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@jsdevtools/ono@7.1.3':
+    resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
 
   '@microsoft/api-extractor-model@7.30.3':
     resolution: {integrity: sha512-yEAvq0F78MmStXdqz9TTT4PZ05Xu5R8nqgwI5xmUmQjWBQ9E6R2n8HB/iZMRciG4rf9iwI2mtuQwIzDXBvHn1w==}
@@ -480,6 +502,23 @@ packages:
       '@typespec/streams':
         optional: true
 
+  '@typespec/openapi3@0.65.0':
+    resolution: {integrity: sha512-TuOCW+TobY8ecWGP2bXduyVYUkjKrCcTKBykxuYHRVEwhs9XW2rpL5vN+V5JP4r/xV0TnADd9Nowi+iwHBFVuw==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@typespec/compiler': ~0.65.0
+      '@typespec/http': ~0.65.0
+      '@typespec/json-schema': ~0.65.0
+      '@typespec/openapi': ~0.65.0
+      '@typespec/versioning': ~0.65.0
+      '@typespec/xml': '*'
+    peerDependenciesMeta:
+      '@typespec/json-schema':
+        optional: true
+      '@typespec/xml':
+        optional: true
+
   '@typespec/openapi@0.65.0':
     resolution: {integrity: sha512-BMrdO2BOTo2Yiz/GMIwZuLSJbtodbKsYTAEOxbKTdrROs8Sgl2QLNitD3W48k3I9KQ69nx4RJt0kSbaAYb8L4Q==}
     engines: {node: '>=18.0.0'}
@@ -660,6 +699,9 @@ packages:
   call-bound@1.0.3:
     resolution: {integrity: sha512-YTd+6wGlNlPxSuri7Y6X8tY2dmm12UMH66RpKMhiX6rsk5wXXnYgbUcOt8kiS31/AjfoTOvCsE+w8nZQLQnzHA==}
     engines: {node: '>= 0.4'}
+
+  call-me-maybe@1.0.2:
+    resolution: {integrity: sha512-HpX65o1Hnr9HH25ojC1YGs7HCQLq0GCOibSaWER0eNpgJ/Z1MZv2mTc7+xh6WOPxbRVcmgbv4hGU+uSQ/2xFZQ==}
 
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -1608,6 +1650,9 @@ packages:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
 
+  openapi-types@12.1.3:
+    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -2319,6 +2364,27 @@ packages:
 
 snapshots:
 
+  '@apidevtools/json-schema-ref-parser@11.7.2':
+    dependencies:
+      '@jsdevtools/ono': 7.1.3
+      '@types/json-schema': 7.0.15
+      js-yaml: 4.1.0
+
+  '@apidevtools/openapi-schemas@2.1.0': {}
+
+  '@apidevtools/swagger-methods@3.0.2': {}
+
+  '@apidevtools/swagger-parser@10.1.1(openapi-types@12.1.3)':
+    dependencies:
+      '@apidevtools/json-schema-ref-parser': 11.7.2
+      '@apidevtools/openapi-schemas': 2.1.0
+      '@apidevtools/swagger-methods': 3.0.2
+      '@jsdevtools/ono': 7.1.3
+      ajv: 8.17.1
+      ajv-draft-04: 1.0.0(ajv@8.17.1)
+      call-me-maybe: 1.0.2
+      openapi-types: 12.1.3
+
   '@azure-tools/rlc-common@0.38.2':
     dependencies:
       handlebars: 4.7.8
@@ -2457,6 +2523,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@jsdevtools/ono@7.1.3': {}
 
   '@microsoft/api-extractor-model@7.30.3(@types/node@18.19.76)':
     dependencies:
@@ -2802,6 +2870,18 @@ snapshots:
     dependencies:
       '@typespec/compiler': 0.65.3
 
+  '@typespec/openapi3@0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3))(@typespec/openapi@0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3)))(@typespec/versioning@0.65.0(@typespec/compiler@0.65.3))(@typespec/xml@0.65.0(@typespec/compiler@0.65.3))':
+    dependencies:
+      '@apidevtools/swagger-parser': 10.1.1(openapi-types@12.1.3)
+      '@typespec/compiler': 0.65.3
+      '@typespec/http': 0.65.0(@typespec/compiler@0.65.3)
+      '@typespec/openapi': 0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3))
+      '@typespec/versioning': 0.65.0(@typespec/compiler@0.65.3)
+      openapi-types: 12.1.3
+      yaml: 2.7.0
+    optionalDependencies:
+      '@typespec/xml': 0.65.0(@typespec/compiler@0.65.3)
+
   '@typespec/openapi@0.65.0(@typespec/compiler@0.65.3)(@typespec/http@0.65.0(@typespec/compiler@0.65.3))':
     dependencies:
       '@typespec/compiler': 0.65.3
@@ -2850,6 +2930,10 @@ snapshots:
   ajv-draft-04@1.0.0(ajv@8.13.0):
     optionalDependencies:
       ajv: 8.13.0
+
+  ajv-draft-04@1.0.0(ajv@8.17.1):
+    optionalDependencies:
+      ajv: 8.17.1
 
   ajv-formats@3.0.1(ajv@8.13.0):
     optionalDependencies:
@@ -3008,6 +3092,8 @@ snapshots:
     dependencies:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
+
+  call-me-maybe@1.0.2: {}
 
   callsites@3.1.0: {}
 
@@ -4057,6 +4143,8 @@ snapshots:
   on-finished@2.4.1:
     dependencies:
       ee-first: 1.1.1
+
+  openapi-types@12.1.3: {}
 
   optionator@0.9.4:
     dependencies:

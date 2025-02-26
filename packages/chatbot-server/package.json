@@ -12,7 +12,6 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "ChatbotClient": "workspace:*",
     "body-parser": "^1.20.3",
     "chatbot-client": "workspace:*",
     "cors": "^2.8.5",
